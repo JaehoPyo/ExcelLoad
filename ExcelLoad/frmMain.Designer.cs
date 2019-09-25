@@ -1620,9 +1620,8 @@
             this.gridColumn50.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn50.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn50.Caption = "라벨번호";
-            this.gridColumn50.FieldName = "LBL_NO";
+            this.gridColumn50.FieldName = "unLBL_NO";
             this.gridColumn50.Name = "gridColumn50";
-            this.gridColumn50.OptionsColumn.ReadOnly = true;
             this.gridColumn50.OptionsFilter.AllowFilter = false;
             this.gridColumn50.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn50.Visible = true;
@@ -1829,7 +1828,8 @@
             this.gridColumn53.AppearanceHeader.Options.UseFont = true;
             this.gridColumn53.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn53.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn53.Caption = "gridColumn13";
+            this.gridColumn53.Caption = "라벨번호(바인딩)";
+            this.gridColumn53.FieldName = "LBL_NO";
             this.gridColumn53.Name = "gridColumn53";
             this.gridColumn53.OptionsColumn.ReadOnly = true;
             this.gridColumn53.OptionsFilter.AllowFilter = false;

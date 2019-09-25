@@ -14,7 +14,6 @@ namespace ExcelLoad
         public frmMain()
         {
             InitializeComponent();
-            // 깃 허브 테스트ㅣㅏㄴ어리ㅏㄴ어리ㅏㄴ어리ㅏㅇ널
         }
 
         /* 엑셀파일 로드 */
@@ -194,57 +193,75 @@ namespace ExcelLoad
         Dictionary<int, string> hash2 = new Dictionary<int, string>();
         private void gridView3_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            if (e.IsSetData && e.Column.FieldName == "LBL_QTY")
+            if (e.IsSetData)
             {
-                if(hash.ContainsKey(e.ListSourceRowIndex))
+                if (e.Column.FieldName == "LBL_QTY")
                 {
-                    hash[e.ListSourceRowIndex] = (int)e.Value;
+                    if (hash.ContainsKey(e.ListSourceRowIndex))
+                    {
+                        hash[e.ListSourceRowIndex] = (int)e.Value;
+                    }
+                    else
+                    {
+                        hash.Add(e.ListSourceRowIndex, (int)e.Value);
+                    }
                 }
-                else
-                {
-                    hash.Add(e.ListSourceRowIndex, (int)e.Value);
-                }
-            }
-            else  if(e.IsGetData && e.Column.FieldName == "LBL_QTY")
-            {
-                if(hash.ContainsKey(e.ListSourceRowIndex))
-                {
-                    e.Value = hash[e.ListSourceRowIndex];
-                }
-                else
-                {
-                    e.Value = 0;
-                }
-            }
 
-            if (e.IsSetData && e.Column.FieldName == "LBL_NO")
-            {
-                if (hash.ContainsKey(e.ListSourceRowIndex))
+                if (e.Column.FieldName == "unLBL_NO")
                 {
-                    hash2[e.ListSourceRowIndex] = (string)e.Value;
-                }
-                else
-                {
-                    hash2.Add(e.ListSourceRowIndex, (string)e.Value);
-                }
-            }
-            else if (e.IsGetData && e.Column.FieldName == "LBL_NO")
-            {
-                if (hash.ContainsKey(e.ListSourceRowIndex))
-                {
-                    e.Value = hash2[e.ListSourceRowIndex];
-                }
-                else
-                {
-                    //e.Value = 0;
-
-                    string ITEM_NO = (e.Row as DataRowView)["ITEM_NO"].ToString();
-                    string LOT_NO = (e.Row as DataRowView)["LOT_NO"].ToString();
-                    string LBL_NO = getLabelNoOrNullFromStock(ITEM_NO, LOT_NO);
-                    e.Value = (LBL_NO == null ? "불가" : LBL_NO);
+                    if (hash2.ContainsKey(e.ListSourceRowIndex))
+                    {
+                        hash2[e.ListSourceRowIndex] = (string)e.Value;
+                    }
+                    else
+                    {
+                        hash2.Add(e.ListSourceRowIndex, (string)e.Value);
+                    }
                 }
             }
+            else if (e.IsGetData)
+            {
+                if (e.Column.FieldName == "LBL_QTY")
+                {
+                    if (hash.ContainsKey(e.ListSourceRowIndex))
+                    {
+                        e.Value = hash[e.ListSourceRowIndex];
+                    }
+                    else
+                    {
+                        e.Value = 0;
+                    }
+                }
 
+                if (e.Column.FieldName == "unLBL_NO")
+                {
+                    if (hash2.ContainsKey(e.ListSourceRowIndex))
+                    {
+                        e.Value = hash2[e.ListSourceRowIndex];
+                    }
+                    else if((e.Row as DataRowView)["LBL_NO"] != null)
+                    {
+                        if ((e.Row as DataRowView)["LBL_NO"].ToString() != "")
+                        {
+                            e.Value = (e.Row as DataRowView)["LBL_NO"].ToString();
+                        }
+                        else
+                        {
+                            string ITEM_NO = (e.Row as DataRowView)["ITEM_NO"].ToString();
+                            string LOT_NO = (e.Row as DataRowView)["LOT_NO"].ToString();
+                            string LBL_NO = getLabelNoOrNullFromStock(ITEM_NO, LOT_NO);
+                            e.Value = (LBL_NO == null ? "불가" : LBL_NO);
+                        }
+                    }
+                    else
+                    {
+                        string ITEM_NO = (e.Row as DataRowView)["ITEM_NO"].ToString();
+                        string LOT_NO = (e.Row as DataRowView)["LOT_NO"].ToString();
+                        string LBL_NO = getLabelNoOrNullFromStock(ITEM_NO, LOT_NO);
+                        e.Value = (LBL_NO == null ? "불가" : LBL_NO);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -271,6 +288,7 @@ namespace ExcelLoad
         {
             gridControl3.DataSource = null;
             hash.Clear();
+            hash2.Clear();
         }
 
         bool isPrinting = false;
@@ -279,8 +297,8 @@ namespace ExcelLoad
         private void btnPrint_Click(object sender, EventArgs e)
         {
             isPrinting = true;
-            if (!LabelPrint.PrinterConnectionOpen())
-                return;
+            //if (!LabelPrint.PrinterConnectionOpen())
+            //    return;
 
             // 라벨발행
             for (int i = 0; i < gridView3.RowCount; i++)
@@ -293,7 +311,7 @@ namespace ExcelLoad
                     data.ITEM_NM = gridView3.GetRowCellValue(i, "ITEM_NM").ToString();
                     data.ITEM_NO = gridView3.GetRowCellValue(i, "ITEM_NO").ToString();
                     data.KEEP_CONDITION = gridView3.GetRowCellValue(i, "STORE_CONDI").ToString();
-                    data.LBL_NO = gridView3.GetRowCellValue(i, "LBL_NO").ToString();
+                    data.LBL_NO = gridView3.GetRowCellValue(i, "unLBL_NO").ToString();
                     data.LOT_NO = gridView3.GetRowCellValue(i, "LOT_NO").ToString();
                     data.VENDOR_NM = gridView3.GetRowCellValue(i, "VENDOR_NM").ToString();
                     data.ORDER_QTY = string.Format("{0:#,#.#####}", Convert.ToDecimal(gridView3.GetRowCellValue(i, "ITEM_QTY")));
