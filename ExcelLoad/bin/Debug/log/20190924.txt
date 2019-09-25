@@ -1,0 +1,1 @@
+2019-09-24 13:54:24 ==> [DBUtils.getSelectResultTableOrNull]명령에 할당된 연결이 보류 중인 로컬 트랜잭션에 연결되어 있는 경우 ExecuteReader을(를) 사용하려면 트랜잭션이 있어야 합니다. 명령의 Transaction 속성이 초기화되지 않았습니다.
