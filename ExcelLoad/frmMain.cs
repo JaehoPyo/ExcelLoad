@@ -69,10 +69,10 @@ namespace ExcelLoad
             string strSQL = string.Empty;
             DataTable table = null;
 
-            // 중복데이터 표시 그리드 초기화 -- 안됨
+            // 중복데이터 표시 그리드 초기화
             tableForGrid2.Rows.Clear();
             gridView2.RefreshData();
-            // 품목코드 없는 데이터 표시 그리드 초기화 -- 안됨
+            // 품목코드 없는 데이터 표시 그리드 초기화
             tableForGrid4.Rows.Clear();
             gridView4.RefreshData();
 
@@ -250,7 +250,7 @@ namespace ExcelLoad
                             string ITEM_NO = (e.Row as DataRowView)["ITEM_NO"].ToString();
                             string LOT_NO = (e.Row as DataRowView)["LOT_NO"].ToString();
                             string LBL_NO = getLabelNoOrNullFromStock(ITEM_NO, LOT_NO);
-                            e.Value = (LBL_NO == null ? "불가" : LBL_NO);
+                            e.Value = (LBL_NO == null ? "발행불가" : LBL_NO);
                         }
                     }
                     else
@@ -258,7 +258,7 @@ namespace ExcelLoad
                         string ITEM_NO = (e.Row as DataRowView)["ITEM_NO"].ToString();
                         string LOT_NO = (e.Row as DataRowView)["LOT_NO"].ToString();
                         string LBL_NO = getLabelNoOrNullFromStock(ITEM_NO, LOT_NO);
-                        e.Value = (LBL_NO == null ? "불가" : LBL_NO);
+                        e.Value = (LBL_NO == null ? "발행불가" : LBL_NO);
                     }
                 }
             }
@@ -400,6 +400,20 @@ namespace ExcelLoad
             }
         }
 
+        // 라벨발행 그리드 행 색상 변경
+        private void gridView3_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            var view = sender as DevExpress.XtraGrid.Views.Grid.GridView;
+            if (view.RowCount < 1) return;
+            if (view.GetRowCellValue(e.RowHandle, "unLBL_NO") == null) return;
+            
+            // 라벨번호 없는 것 (발행불가인 것) 색깔 다르게 표시
+            if(view.GetRowCellValue(e.RowHandle, "unLBL_NO").ToString().Contains("불가"))
+            {
+                e.Appearance.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
         /// <summary>
         /// W_ITEM 테이블에서 단위를 가져옴
         /// </summary>
@@ -444,7 +458,7 @@ namespace ExcelLoad
                     command.Parameters.Add("@rPGM_NM", SqlDbType.NVarChar).Value = "재고이관";
                     command.Parameters.Add("@rEVENT_NM", SqlDbType.NVarChar).Value = "재고이관";
                     command.Parameters.Add("@rMSG", SqlDbType.NVarChar).Value = "재고이관";
-                    command.Parameters.Add("@rCRT_USR", SqlDbType.NVarChar).Value = "system";
+                    command.Parameters.Add("@rCRT_USR", SqlDbType.NVarChar).Value = "SYSTEM";
                     command.Parameters.Add("@rCRT_PC", SqlDbType.NVarChar).Value = "PC";
                     command.Parameters.Add("@rCRT_IP", SqlDbType.NVarChar).Value = "";
                     command.Parameters.Add("@rCRT_MENU", SqlDbType.NVarChar).Value = "PC";
@@ -517,8 +531,6 @@ namespace ExcelLoad
         // 그리드에 데이터 복사
         public void AddDataToGrid(int grid1RowHandle, DataTable table, DevExpress.XtraGrid.Views.Grid.GridView gridView)
         {
-            if (gridControl2.DataSource == null) return;
-
             DataRow dataRow = gridView1.GetDataRow(grid1RowHandle);
             table.ImportRow(dataRow);
             gridView.RefreshData();
