@@ -297,12 +297,15 @@ namespace ExcelLoad
         private void btnPrint_Click(object sender, EventArgs e)
         {
             isPrinting = true;
-            //if (!LabelPrint.PrinterConnectionOpen())
-            //    return;
+            if (!LabelPrint.PrinterConnectionOpen())
+                return;
 
             // 라벨발행
             for (int i = 0; i < gridView3.RowCount; i++)
             {
+                bool isPrintable = (gridView3.GetRowCellValue(i, "LBL_NO").ToString() == "불가" ? false : true);                
+                if (!isPrintable) continue;
+
                 int LBL_QTY = Convert.ToInt32(gridView3.GetRowCellValue(i, "LBL_QTY").ToString());
                 for (int j = 1; j < LBL_QTY + 1; j++)
                 {
