@@ -207,7 +207,7 @@ namespace ExcelLoad
                     }
                 }
 
-                if (e.Column.FieldName == "unLBL_NO")
+                if (e.Column.FieldName == "LBL_NO")
                 {
                     if (hash2.ContainsKey(e.ListSourceRowIndex))
                     {
@@ -233,25 +233,11 @@ namespace ExcelLoad
                     }
                 }
 
-                if (e.Column.FieldName == "unLBL_NO")
+                if (e.Column.FieldName == "LBL_NO")
                 {
                     if (hash2.ContainsKey(e.ListSourceRowIndex))
                     {
                         e.Value = hash2[e.ListSourceRowIndex];
-                    }
-                    else if((e.Row as DataRowView)["LBL_NO"] != null)
-                    {
-                        if ((e.Row as DataRowView)["LBL_NO"].ToString() != "")
-                        {
-                            e.Value = (e.Row as DataRowView)["LBL_NO"].ToString();
-                        }
-                        else
-                        {
-                            string ITEM_NO = (e.Row as DataRowView)["ITEM_NO"].ToString();
-                            string LOT_NO = (e.Row as DataRowView)["LOT_NO"].ToString();
-                            string LBL_NO = getLabelNoOrNullFromStock(ITEM_NO, LOT_NO);
-                            e.Value = (LBL_NO == null ? "발행불가" : LBL_NO);
-                        }
                     }
                     else
                     {

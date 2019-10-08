@@ -151,7 +151,7 @@
             this.btnStop = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnOpen = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
@@ -1621,7 +1621,7 @@
             this.gridColumn50.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn50.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn50.Caption = "라벨번호";
-            this.gridColumn50.FieldName = "unLBL_NO";
+            this.gridColumn50.FieldName = "LBL_NO";
             this.gridColumn50.Name = "gridColumn50";
             this.gridColumn50.OptionsFilter.AllowFilter = false;
             this.gridColumn50.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -1829,8 +1829,7 @@
             this.gridColumn53.AppearanceHeader.Options.UseFont = true;
             this.gridColumn53.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn53.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn53.Caption = "라벨번호(바인딩)";
-            this.gridColumn53.FieldName = "LBL_NO";
+            this.gridColumn53.Caption = "----";
             this.gridColumn53.Name = "gridColumn53";
             this.gridColumn53.OptionsColumn.ReadOnly = true;
             this.gridColumn53.OptionsFilter.AllowFilter = false;
@@ -1953,7 +1952,7 @@
             this.flowLayoutPanel3.Controls.Add(this.btnStop);
             this.flowLayoutPanel3.Controls.Add(this.btnPrint);
             this.flowLayoutPanel3.Controls.Add(this.btnClear);
-            this.flowLayoutPanel3.Controls.Add(this.simpleButton1);
+            this.flowLayoutPanel3.Controls.Add(this.btnOpen);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(1126, 0);
@@ -1994,15 +1993,16 @@
             this.btnClear.ToolTip = "초기화";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // simpleButton1
+            // btnOpen
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(3, 0);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(44, 37);
-            this.simpleButton1.TabIndex = 15;
-            this.simpleButton1.Click += new System.EventHandler(this.btnInquiry_Click);
+            this.btnOpen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnOpen.Location = new System.Drawing.Point(3, 0);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(44, 37);
+            this.btnOpen.TabIndex = 15;
+            this.btnOpen.ToolTip = "엑셀파일열기";
+            this.btnOpen.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // frmMain
             // 
@@ -2118,7 +2118,7 @@
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.SimpleButton btnStop;
         private DevExpress.XtraEditors.SimpleButton btnPrint;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnOpen;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn61;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel10;
