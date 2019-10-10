@@ -300,7 +300,7 @@ namespace ExcelLoad
                     data.ITEM_NM = gridView3.GetRowCellValue(i, "ITEM_NM").ToString();
                     data.ITEM_NO = gridView3.GetRowCellValue(i, "ITEM_NO").ToString();
                     data.KEEP_CONDITION = gridView3.GetRowCellValue(i, "STORE_CONDI").ToString();
-                    data.LBL_NO = gridView3.GetRowCellValue(i, "unLBL_NO").ToString();
+                    data.LBL_NO = gridView3.GetRowCellValue(i, "LBL_NO").ToString();
                     data.LOT_NO = gridView3.GetRowCellValue(i, "LOT_NO").ToString();
                     data.VENDOR_NM = gridView3.GetRowCellValue(i, "VENDOR_NM").ToString();
                     data.ORDER_QTY = string.Format("{0:#,#.#####}", Convert.ToDecimal(gridView3.GetRowCellValue(i, "ITEM_QTY")));
@@ -391,10 +391,10 @@ namespace ExcelLoad
         {
             var view = sender as DevExpress.XtraGrid.Views.Grid.GridView;
             if (view.RowCount < 1) return;
-            if (view.GetRowCellValue(e.RowHandle, "unLBL_NO") == null) return;
+            if (view.GetRowCellValue(e.RowHandle, "LBL_NO") == null) return;
             
             // 라벨번호 없는 것 (발행불가인 것) 색깔 다르게 표시
-            if(view.GetRowCellValue(e.RowHandle, "unLBL_NO").ToString().Contains("불가"))
+            if(view.GetRowCellValue(e.RowHandle, "LBL_NO").ToString().Contains("불가"))
             {
                 e.Appearance.ForeColor = System.Drawing.Color.Red;
             }
