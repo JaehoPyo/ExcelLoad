@@ -62,6 +62,8 @@ namespace ExcelLoad
             if (DBUtils.sqlConnection == null) return;
             if (gridView1.RowCount < 1) return;
 
+            btnCancel.Visible = true;
+
             isRunning = true;
             isComplete = true;
             string ITEM_NO = string.Empty;
@@ -85,6 +87,7 @@ namespace ExcelLoad
                     if (!isRunning)
                     {
                         transaction.Rollback();
+                        btnCancel.Visible = false;
                         break;
                     }
 
@@ -263,6 +266,9 @@ namespace ExcelLoad
                                     " WHERE ITEM_NO = '" + ITEM_NO + "'" +
                                     "   AND LOT_NO = '" + LOT_NO + "'";
             DataTable table = DBUtils.getSelectResultTableOrNull(strSQL);
+
+            if (table == null) return null;
+
             if (table.Rows.Count > 0)
                 return table.Rows[0]["LBL_NO"].ToString();
             else
@@ -287,47 +293,52 @@ namespace ExcelLoad
                 return;
 
             // 라벨발행
-            for (int i = 0; i < gridView3.RowCount; i++)
+            int index;
+            for (int i = 0; i < gridView3.SelectedRowsCount; i++)
             {
-                bool isPrintable = (gridView3.GetRowCellValue(i, "LBL_NO").ToString() == "불가" ? false : true);                
+                index = gridView3.GetSelectedRows()[i];
+                gridView3.FocusedRowHandle = index;
+                Application.DoEvents();
+                bool isPrintable = (gridView3.GetRowCellValue(index, "LBL_NO").ToString().Contains("불가") ? false : true);                
                 if (!isPrintable) continue;
 
-                int LBL_QTY = Convert.ToInt32(gridView3.GetRowCellValue(i, "LBL_QTY").ToString());
+                int LBL_QTY = Convert.ToInt32(gridView3.GetRowCellValue(index, "LBL_QTY").ToString());
                 for (int j = 1; j < LBL_QTY + 1; j++)
                 {
                     if (!isPrinting) return;
-                    
-                    data.ITEM_NM = gridView3.GetRowCellValue(i, "ITEM_NM").ToString();
-                    data.ITEM_NO = gridView3.GetRowCellValue(i, "ITEM_NO").ToString();
-                    data.KEEP_CONDITION = gridView3.GetRowCellValue(i, "STORE_CONDI").ToString();
-                    data.LBL_NO = gridView3.GetRowCellValue(i, "LBL_NO").ToString();
-                    data.LOT_NO = gridView3.GetRowCellValue(i, "LOT_NO").ToString();
-                    data.VENDOR_NM = gridView3.GetRowCellValue(i, "VENDOR_NM").ToString();
-                    data.ORDER_QTY = string.Format("{0:#,#.#####}", Convert.ToDecimal(gridView3.GetRowCellValue(i, "ITEM_QTY")));
-                    data.LABEL_QTY = gridView3.GetRowCellValue(i, "LBL_QTY").ToString();
-                    data.UNIT = gridView3.GetRowCellValue(i, "UNIT").ToString();
+                    data.ITEM_NM = gridView3.GetRowCellValue(index, "ITEM_NM").ToString();
+                    data.ITEM_NO = gridView3.GetRowCellValue(index, "ITEM_NO").ToString();
+                    data.KEEP_CONDITION = gridView3.GetRowCellValue(index, "STORE_CONDI").ToString();
+                    data.LBL_NO = gridView3.GetRowCellValue(index, "LBL_NO").ToString();
+                    data.LOT_NO = gridView3.GetRowCellValue(index, "LOT_NO").ToString();
+                    data.VENDOR_NM = gridView3.GetRowCellValue(index, "VENDOR_NM").ToString();
+                    data.ORDER_QTY = string.Format("{0:#,#.#####}", Convert.ToDecimal(gridView3.GetRowCellValue(index, "ITEM_QTY")));
+                    data.LABEL_QTY = gridView3.GetRowCellValue(index, "LBL_QTY").ToString();
+                    data.UNIT = gridView3.GetRowCellValue(index, "UNIT").ToString();
                     data.LABEL_SEQ = j.ToString();
-                    if ((gridView3.GetRowCellValue(i, "IN_DATE") == null) ||
-                        (gridView3.GetRowCellValue(i, "IN_DATE").ToString() == ""))
+                    if ((gridView3.GetRowCellValue(index, "IN_DATE") == null) ||
+                        (gridView3.GetRowCellValue(index, "IN_DATE").ToString() == ""))
                     {
                         data.UNLOAD_DATE = "";
                     }
                     else
                     {
-                        data.UNLOAD_DATE = DateTime.ParseExact(gridView3.GetRowCellValue(i, "IN_DATE").ToString(), "yyyyMMdd", null).ToString("yyyy-MM-dd");
+                        data.UNLOAD_DATE = DateTime.ParseExact(gridView3.GetRowCellValue(index, "IN_DATE").ToString(), "yyyyMMdd", null).ToString("yyyy-MM-dd");
                     }
 
-                    if ((gridView3.GetRowCellValue(i, "USE_DEADLN") == null) ||
-                        (gridView3.GetRowCellValue(i, "USE_DEADLN").ToString() == ""))
+                    if ((gridView3.GetRowCellValue(index, "USE_DEADLN") == null) ||
+                        (gridView3.GetRowCellValue(index, "USE_DEADLN").ToString() == ""))
                     {
                         data.USE_DEADLN = "";
                     }
                     else
                     {
-                        data.USE_DEADLN = DateTime.ParseExact(gridView3.GetRowCellValue(i, "USE_DEADLN").ToString(), "yyyyMMdd", null).ToString("yyyy-MM-dd");
+                        data.USE_DEADLN = DateTime.ParseExact(gridView3.GetRowCellValue(index, "USE_DEADLN").ToString(), "yyyyMMdd", null).ToString("yyyy-MM-dd");
                     }
 
                     LabelPrint.PrintLabel("전체라벨발행", "재고이관", "재고이관", data);
+
+                    System.Threading.Thread.Sleep(1000);
                 }
             }
         }
@@ -364,17 +375,28 @@ namespace ExcelLoad
                 UNIT        = getUnit(ITEM_NO, transaction);
                 IN_DATE     = DateTime.Now.ToString("yyyyMMdd");
 
-                strSQL = " INSERT INTO W_STOCK ( WMS,               LOC,              ITEM_NO,             LOT_NO,              ITEM_QTY, " +
-                         "                       MGM_STATUS,        USE_DEADLN,       IN_DATE,             MADEIN_NO,           MADEIN_DATE, " +
-                         "                       MADEIN_NM,         VENDOR_NM,        STOCK_SEQ,           PRE_STOCK_SEQ,       LBL_NO, " +
-                         "                       REQ_NO,            REQ_SEQ,          REQ_ERP_CD,          REQ_ERP_SEQ,         PLAN_SEQ," +
-                         "                       REQ_DATE,          IN_TYPE,          BIGO,                CRT_IP,              CRT_PC, " + 
-                         "                       CRT_MENU) " +
-                         "              VALUES ('1001',               '1001000001', '"         + ITEM_NO   + "', '" + LOT_NO         + "', '" + ITEM_QTY + "', " +
-                         "                      '" + MGM_STATUS + "', '" + USE_DEADLN + "', '" + IN_DATE   + "', '" + MADEIN_NO      + "', '" + MADEIN_DATE + "'," +
-                         "                      '" + MADEIN_NM  + "', '" + VENDOR_NM  + "', '" + STOCK_SEQ + "', '" + STOCK_SEQ      + "', '" + LBL_NO + "', " +
-                         "                      '',                   '',                   '',                  '',                   '',  " +
-                         "                      '',                   '29',                 '재고이관', '" + DBUtils.ClientIPAddress + "', '" + DBUtils.ClientPcName + "'," +
+                // 작은 따옴표 있는지 확인 후 있으면 작은 따옴표를 2개 붙임
+                ITEM_NO     = ITEM_NO.Contains("'")     ? withSingleQuotedString(ITEM_NO)     : ITEM_NO;
+                LOT_NO      = LOT_NO.Contains("'")      ? withSingleQuotedString(LOT_NO)      : LOT_NO;
+                ITEM_QTY    = ITEM_QTY.Contains("'")    ? withSingleQuotedString(ITEM_QTY)    : ITEM_QTY;
+                MGM_STATUS  = MGM_STATUS.Contains("'")  ? withSingleQuotedString(MGM_STATUS)  : MGM_STATUS;
+                USE_DEADLN  = USE_DEADLN.Contains("'")  ? withSingleQuotedString(USE_DEADLN)  : USE_DEADLN;
+                MADEIN_NO   = MADEIN_NO.Contains("'")   ? withSingleQuotedString(MADEIN_NO)   : MADEIN_NO;
+                MADEIN_DATE = MADEIN_DATE.Contains("'") ? withSingleQuotedString(MADEIN_DATE) : MADEIN_DATE;
+                MADEIN_NM   = MADEIN_NM.Contains("'")   ? withSingleQuotedString(MADEIN_NM)   : MADEIN_NM;
+                VENDOR_NM   = VENDOR_NM.Contains("'")   ? withSingleQuotedString(VENDOR_NM)   : VENDOR_NM;
+                
+                strSQL = " INSERT INTO W_STOCK ( WMS,               LOC,              ITEM_NO,             LOT_NO,              ITEM_QTY, " + Environment.NewLine +
+                         "                       MGM_STATUS,        USE_DEADLN,       IN_DATE,             MADEIN_NO,           MADEIN_DATE, " + Environment.NewLine +
+                         "                       MADEIN_NM,         VENDOR_NM,        STOCK_SEQ,           PRE_STOCK_SEQ,       LBL_NO, " + Environment.NewLine +
+                         "                       REQ_NO,            REQ_SEQ,          REQ_ERP_CD,          REQ_ERP_SEQ,         PLAN_SEQ," + Environment.NewLine +
+                         "                       REQ_DATE,          IN_TYPE,          BIGO,                CRT_IP,              CRT_PC, " + Environment.NewLine +
+                         "                       CRT_MENU) " + Environment.NewLine +
+                         "              VALUES ('1001',               '1001000001', '"         + ITEM_NO   + "', '" + LOT_NO         + "', '" + ITEM_QTY + "', " + Environment.NewLine +
+                         "                      '" + MGM_STATUS + "', '" + USE_DEADLN + "', '" + IN_DATE   + "', '" + MADEIN_NO      + "', '" + MADEIN_DATE + "'," + Environment.NewLine +
+                         "                      '" + MADEIN_NM  + "', '" + VENDOR_NM  + "', '" + STOCK_SEQ + "', '" + STOCK_SEQ      + "', '" + LBL_NO + "', " + Environment.NewLine +
+                         "                      '',                   '',                   '',                  '',                   '',  " + Environment.NewLine +
+                         "                      '',                   '29',                 '재고이관', '" + DBUtils.ClientIPAddress + "', '" + DBUtils.ClientPcName + "'," + Environment.NewLine +
                          "                      'PC')";
 
                 DBUtils.InsertData(strSQL, transaction);
@@ -384,6 +406,20 @@ namespace ExcelLoad
             {
                 throw ex;
             }
+        }
+        
+        private string withSingleQuotedString(string TargetString)
+        {
+            if (!TargetString.Contains("'")) return null;
+
+            var StringArr = TargetString.Split('\'');
+            string NewString = string.Empty;
+            for(int i = 0; i < StringArr.Length - 1 ; i++)
+            {
+                NewString = NewString + StringArr[i] + "\'\'";
+            }
+            NewString = NewString + StringArr[StringArr.Length - 1];
+            return NewString;
         }
 
         // 라벨발행 그리드 행 색상 변경
@@ -397,6 +433,16 @@ namespace ExcelLoad
             if(view.GetRowCellValue(e.RowHandle, "LBL_NO").ToString().Contains("불가"))
             {
                 e.Appearance.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        // 라벨수량 일괄적용
+        private void btnLBL_QTY_Click(object sender, EventArgs e)
+        {
+            if (txtLBL_QTY.Text == "") return;
+            for (int i = 0; i < gridView3.RowCount; i++)
+            {
+                gridView3.SetRowCellValue(i, "LBL_QTY", txtLBL_QTY.Text);
             }
         }
 

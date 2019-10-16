@@ -39,6 +39,7 @@
             this.gridControl4 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn62 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn70 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn63 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn64 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn65 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,7 +47,6 @@
             this.gridColumn67 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn68 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn69 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn70 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn71 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn72 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn73 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,6 +67,7 @@
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,7 +75,6 @@
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -95,15 +95,15 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -125,6 +125,7 @@
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn53 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -137,7 +138,6 @@
             this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn51 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn52 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn53 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn54 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn55 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn56 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -146,12 +146,14 @@
             this.gridColumn59 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn60 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnLBL_QTY = new DevExpress.XtraEditors.SimpleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnStop = new DevExpress.XtraEditors.SimpleButton();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnOpen = new DevExpress.XtraEditors.SimpleButton();
+            this.txtLBL_QTY = new DevExpress.XtraEditors.SpinEdit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
@@ -178,6 +180,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.panel8.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLBL_QTY.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -186,14 +189,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1484, 30);
+            this.panel1.Size = new System.Drawing.Size(1684, 30);
             this.panel1.TabIndex = 0;
             // 
             // lblDBCon
             // 
             this.lblDBCon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDBCon.AutoSize = true;
-            this.lblDBCon.Location = new System.Drawing.Point(1434, 9);
+            this.lblDBCon.Location = new System.Drawing.Point(1634, 9);
             this.lblDBCon.Name = "lblDBCon";
             this.lblDBCon.Size = new System.Drawing.Size(38, 12);
             this.lblDBCon.TabIndex = 0;
@@ -204,7 +207,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 666);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1484, 15);
+            this.panel2.Size = new System.Drawing.Size(1684, 15);
             this.panel2.TabIndex = 1;
             // 
             // navigationPane1
@@ -236,9 +239,9 @@
             this.navigationPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.navigationPage1,
             this.navigationPage2});
-            this.navigationPane1.RegularSize = new System.Drawing.Size(1484, 636);
+            this.navigationPane1.RegularSize = new System.Drawing.Size(1684, 636);
             this.navigationPane1.SelectedPage = this.navigationPage1;
-            this.navigationPane1.Size = new System.Drawing.Size(1484, 636);
+            this.navigationPane1.Size = new System.Drawing.Size(1684, 636);
             this.navigationPane1.TabIndex = 0;
             this.navigationPane1.Text = "navigationPane1";
             // 
@@ -256,7 +259,7 @@
             this.navigationPage1.Properties.AppearanceCaption.Options.UseFont = true;
             this.navigationPage1.Properties.AppearanceCaption.Options.UseTextOptions = true;
             this.navigationPage1.Properties.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.navigationPage1.Size = new System.Drawing.Size(1328, 576);
+            this.navigationPage1.Size = new System.Drawing.Size(1528, 576);
             // 
             // panel5
             // 
@@ -264,9 +267,9 @@
             this.panel5.Controls.Add(this.splitterControl2);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(671, 0);
+            this.panel5.Location = new System.Drawing.Point(872, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(657, 576);
+            this.panel5.Size = new System.Drawing.Size(656, 576);
             this.panel5.TabIndex = 10;
             // 
             // panel10
@@ -276,7 +279,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(0, 358);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(657, 218);
+            this.panel10.Size = new System.Drawing.Size(656, 218);
             this.panel10.TabIndex = 13;
             // 
             // gridControl4
@@ -285,7 +288,7 @@
             this.gridControl4.Location = new System.Drawing.Point(0, 40);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(657, 178);
+            this.gridControl4.Size = new System.Drawing.Size(656, 178);
             this.gridControl4.TabIndex = 9;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -294,6 +297,7 @@
             // 
             this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn62,
+            this.gridColumn70,
             this.gridColumn63,
             this.gridColumn64,
             this.gridColumn65,
@@ -301,7 +305,6 @@
             this.gridColumn67,
             this.gridColumn68,
             this.gridColumn69,
-            this.gridColumn70,
             this.gridColumn71,
             this.gridColumn72,
             this.gridColumn73,
@@ -339,6 +342,22 @@
             this.gridColumn62.Visible = true;
             this.gridColumn62.VisibleIndex = 0;
             // 
+            // gridColumn70
+            // 
+            this.gridColumn70.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn70.AppearanceCell.Options.UseFont = true;
+            this.gridColumn70.AppearanceHeader.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn70.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn70.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn70.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn70.Caption = "품목명";
+            this.gridColumn70.FieldName = "ITEM_NM";
+            this.gridColumn70.Name = "gridColumn70";
+            this.gridColumn70.OptionsColumn.ReadOnly = true;
+            this.gridColumn70.OptionsFilter.AllowFilter = false;
+            this.gridColumn70.Visible = true;
+            this.gridColumn70.VisibleIndex = 1;
+            // 
             // gridColumn63
             // 
             this.gridColumn63.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -357,7 +376,7 @@
             this.gridColumn63.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "LOT_NO", "{0}")});
             this.gridColumn63.Visible = true;
-            this.gridColumn63.VisibleIndex = 1;
+            this.gridColumn63.VisibleIndex = 2;
             // 
             // gridColumn64
             // 
@@ -375,7 +394,7 @@
             this.gridColumn64.OptionsColumn.ReadOnly = true;
             this.gridColumn64.OptionsFilter.AllowFilter = false;
             this.gridColumn64.Visible = true;
-            this.gridColumn64.VisibleIndex = 2;
+            this.gridColumn64.VisibleIndex = 3;
             // 
             // gridColumn65
             // 
@@ -393,7 +412,7 @@
             this.gridColumn65.OptionsColumn.ReadOnly = true;
             this.gridColumn65.OptionsFilter.AllowFilter = false;
             this.gridColumn65.Visible = true;
-            this.gridColumn65.VisibleIndex = 3;
+            this.gridColumn65.VisibleIndex = 4;
             // 
             // gridColumn66
             // 
@@ -411,7 +430,7 @@
             this.gridColumn66.OptionsColumn.ReadOnly = true;
             this.gridColumn66.OptionsFilter.AllowFilter = false;
             this.gridColumn66.Visible = true;
-            this.gridColumn66.VisibleIndex = 4;
+            this.gridColumn66.VisibleIndex = 5;
             // 
             // gridColumn67
             // 
@@ -429,7 +448,7 @@
             this.gridColumn67.OptionsColumn.ReadOnly = true;
             this.gridColumn67.OptionsFilter.AllowFilter = false;
             this.gridColumn67.Visible = true;
-            this.gridColumn67.VisibleIndex = 5;
+            this.gridColumn67.VisibleIndex = 6;
             // 
             // gridColumn68
             // 
@@ -447,7 +466,7 @@
             this.gridColumn68.OptionsColumn.ReadOnly = true;
             this.gridColumn68.OptionsFilter.AllowFilter = false;
             this.gridColumn68.Visible = true;
-            this.gridColumn68.VisibleIndex = 6;
+            this.gridColumn68.VisibleIndex = 7;
             // 
             // gridColumn69
             // 
@@ -465,20 +484,7 @@
             this.gridColumn69.OptionsColumn.ReadOnly = true;
             this.gridColumn69.OptionsFilter.AllowFilter = false;
             this.gridColumn69.Visible = true;
-            this.gridColumn69.VisibleIndex = 7;
-            // 
-            // gridColumn70
-            // 
-            this.gridColumn70.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn70.AppearanceCell.Options.UseFont = true;
-            this.gridColumn70.AppearanceHeader.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn70.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn70.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn70.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn70.Caption = "gridColumn9";
-            this.gridColumn70.Name = "gridColumn70";
-            this.gridColumn70.OptionsColumn.ReadOnly = true;
-            this.gridColumn70.OptionsFilter.AllowFilter = false;
+            this.gridColumn69.VisibleIndex = 8;
             // 
             // gridColumn71
             // 
@@ -488,10 +494,13 @@
             this.gridColumn71.AppearanceHeader.Options.UseFont = true;
             this.gridColumn71.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn71.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn71.Caption = "gridColumn10";
+            this.gridColumn71.Caption = "관리상태";
+            this.gridColumn71.FieldName = "MGM_STATUS";
             this.gridColumn71.Name = "gridColumn71";
             this.gridColumn71.OptionsColumn.ReadOnly = true;
             this.gridColumn71.OptionsFilter.AllowFilter = false;
+            this.gridColumn71.Visible = true;
+            this.gridColumn71.VisibleIndex = 9;
             // 
             // gridColumn72
             // 
@@ -501,10 +510,13 @@
             this.gridColumn72.AppearanceHeader.Options.UseFont = true;
             this.gridColumn72.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn72.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn72.Caption = "gridColumn11";
+            this.gridColumn72.Caption = "입고일자";
+            this.gridColumn72.FieldName = "IN_DATE";
             this.gridColumn72.Name = "gridColumn72";
             this.gridColumn72.OptionsColumn.ReadOnly = true;
             this.gridColumn72.OptionsFilter.AllowFilter = false;
+            this.gridColumn72.Visible = true;
+            this.gridColumn72.VisibleIndex = 10;
             // 
             // gridColumn73
             // 
@@ -514,10 +526,13 @@
             this.gridColumn73.AppearanceHeader.Options.UseFont = true;
             this.gridColumn73.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn73.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn73.Caption = "gridColumn12";
+            this.gridColumn73.Caption = "보관조건";
+            this.gridColumn73.FieldName = "STORE_CONDI";
             this.gridColumn73.Name = "gridColumn73";
             this.gridColumn73.OptionsColumn.ReadOnly = true;
             this.gridColumn73.OptionsFilter.AllowFilter = false;
+            this.gridColumn73.Visible = true;
+            this.gridColumn73.VisibleIndex = 11;
             // 
             // gridColumn74
             // 
@@ -631,7 +646,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(657, 40);
+            this.panel11.Size = new System.Drawing.Size(656, 40);
             this.panel11.TabIndex = 7;
             // 
             // flowLayoutPanel4
@@ -639,7 +654,7 @@
             this.flowLayoutPanel4.Controls.Add(this.btnSaveExcel2);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(455, 0);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(454, 0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(200, 38);
             this.flowLayoutPanel4.TabIndex = 4;
@@ -672,7 +687,7 @@
             this.splitterControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitterControl2.Location = new System.Drawing.Point(0, 353);
             this.splitterControl2.Name = "splitterControl2";
-            this.splitterControl2.Size = new System.Drawing.Size(657, 5);
+            this.splitterControl2.Size = new System.Drawing.Size(656, 5);
             this.splitterControl2.TabIndex = 12;
             this.splitterControl2.TabStop = false;
             // 
@@ -683,7 +698,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(657, 353);
+            this.panel6.Size = new System.Drawing.Size(656, 353);
             this.panel6.TabIndex = 11;
             // 
             // gridControl2
@@ -692,7 +707,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 40);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(657, 313);
+            this.gridControl2.Size = new System.Drawing.Size(656, 313);
             this.gridControl2.TabIndex = 10;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -701,6 +716,7 @@
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn21,
+            this.gridColumn29,
             this.gridColumn22,
             this.gridColumn23,
             this.gridColumn24,
@@ -708,7 +724,6 @@
             this.gridColumn26,
             this.gridColumn27,
             this.gridColumn28,
-            this.gridColumn29,
             this.gridColumn30,
             this.gridColumn31,
             this.gridColumn32,
@@ -746,6 +761,22 @@
             this.gridColumn21.Visible = true;
             this.gridColumn21.VisibleIndex = 0;
             // 
+            // gridColumn29
+            // 
+            this.gridColumn29.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn29.AppearanceCell.Options.UseFont = true;
+            this.gridColumn29.AppearanceHeader.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn29.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn29.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn29.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn29.Caption = "품목명";
+            this.gridColumn29.FieldName = "ITEM_NM";
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.OptionsColumn.ReadOnly = true;
+            this.gridColumn29.OptionsFilter.AllowFilter = false;
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 1;
+            // 
             // gridColumn22
             // 
             this.gridColumn22.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -764,7 +795,7 @@
             this.gridColumn22.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "LOT_NO", "{0}")});
             this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 1;
+            this.gridColumn22.VisibleIndex = 2;
             // 
             // gridColumn23
             // 
@@ -782,7 +813,7 @@
             this.gridColumn23.OptionsColumn.ReadOnly = true;
             this.gridColumn23.OptionsFilter.AllowFilter = false;
             this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 2;
+            this.gridColumn23.VisibleIndex = 3;
             // 
             // gridColumn24
             // 
@@ -800,7 +831,7 @@
             this.gridColumn24.OptionsColumn.ReadOnly = true;
             this.gridColumn24.OptionsFilter.AllowFilter = false;
             this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 3;
+            this.gridColumn24.VisibleIndex = 4;
             // 
             // gridColumn25
             // 
@@ -818,7 +849,7 @@
             this.gridColumn25.OptionsColumn.ReadOnly = true;
             this.gridColumn25.OptionsFilter.AllowFilter = false;
             this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 4;
+            this.gridColumn25.VisibleIndex = 5;
             // 
             // gridColumn26
             // 
@@ -836,7 +867,7 @@
             this.gridColumn26.OptionsColumn.ReadOnly = true;
             this.gridColumn26.OptionsFilter.AllowFilter = false;
             this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 5;
+            this.gridColumn26.VisibleIndex = 6;
             // 
             // gridColumn27
             // 
@@ -854,7 +885,7 @@
             this.gridColumn27.OptionsColumn.ReadOnly = true;
             this.gridColumn27.OptionsFilter.AllowFilter = false;
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 6;
+            this.gridColumn27.VisibleIndex = 7;
             // 
             // gridColumn28
             // 
@@ -872,20 +903,7 @@
             this.gridColumn28.OptionsColumn.ReadOnly = true;
             this.gridColumn28.OptionsFilter.AllowFilter = false;
             this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 7;
-            // 
-            // gridColumn29
-            // 
-            this.gridColumn29.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn29.AppearanceCell.Options.UseFont = true;
-            this.gridColumn29.AppearanceHeader.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn29.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn29.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn29.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn29.Caption = "gridColumn9";
-            this.gridColumn29.Name = "gridColumn29";
-            this.gridColumn29.OptionsColumn.ReadOnly = true;
-            this.gridColumn29.OptionsFilter.AllowFilter = false;
+            this.gridColumn28.VisibleIndex = 8;
             // 
             // gridColumn30
             // 
@@ -895,10 +913,14 @@
             this.gridColumn30.AppearanceHeader.Options.UseFont = true;
             this.gridColumn30.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn30.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn30.Caption = "gridColumn10";
+            this.gridColumn30.Caption = "관리상태";
+            this.gridColumn30.FieldName = "MGM_STATUS";
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.OptionsColumn.ReadOnly = true;
             this.gridColumn30.OptionsFilter.AllowFilter = false;
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 9;
+            this.gridColumn30.Width = 100;
             // 
             // gridColumn31
             // 
@@ -908,10 +930,14 @@
             this.gridColumn31.AppearanceHeader.Options.UseFont = true;
             this.gridColumn31.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn31.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn31.Caption = "gridColumn11";
+            this.gridColumn31.Caption = "입고일자";
+            this.gridColumn31.FieldName = "IN_DATE";
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.OptionsColumn.ReadOnly = true;
             this.gridColumn31.OptionsFilter.AllowFilter = false;
+            this.gridColumn31.Visible = true;
+            this.gridColumn31.VisibleIndex = 10;
+            this.gridColumn31.Width = 100;
             // 
             // gridColumn32
             // 
@@ -921,10 +947,14 @@
             this.gridColumn32.AppearanceHeader.Options.UseFont = true;
             this.gridColumn32.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn32.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn32.Caption = "gridColumn12";
+            this.gridColumn32.Caption = "보관조건";
+            this.gridColumn32.FieldName = "STORE_CONDI";
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.OptionsColumn.ReadOnly = true;
             this.gridColumn32.OptionsFilter.AllowFilter = false;
+            this.gridColumn32.Visible = true;
+            this.gridColumn32.VisibleIndex = 11;
+            this.gridColumn32.Width = 100;
             // 
             // gridColumn33
             // 
@@ -1038,7 +1068,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(657, 40);
+            this.panel9.Size = new System.Drawing.Size(656, 40);
             this.panel9.TabIndex = 7;
             // 
             // flowLayoutPanel2
@@ -1046,7 +1076,7 @@
             this.flowLayoutPanel2.Controls.Add(this.btnSaveExcel1);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(455, 0);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(454, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 38);
             this.flowLayoutPanel2.TabIndex = 4;
@@ -1076,7 +1106,7 @@
             // 
             // splitterControl1
             // 
-            this.splitterControl1.Location = new System.Drawing.Point(666, 0);
+            this.splitterControl1.Location = new System.Drawing.Point(867, 0);
             this.splitterControl1.Name = "splitterControl1";
             this.splitterControl1.Size = new System.Drawing.Size(5, 576);
             this.splitterControl1.TabIndex = 9;
@@ -1089,7 +1119,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(666, 576);
+            this.panel3.Size = new System.Drawing.Size(867, 576);
             this.panel3.TabIndex = 8;
             // 
             // gridControl1
@@ -1098,7 +1128,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 40);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(666, 536);
+            this.gridControl1.Size = new System.Drawing.Size(867, 536);
             this.gridControl1.TabIndex = 8;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -1107,15 +1137,15 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
+            this.gridColumn9,
             this.gridColumn2,
             this.gridColumn3,
+            this.gridColumn10,
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
             this.gridColumn11,
             this.gridColumn12,
             this.gridColumn13,
@@ -1151,6 +1181,23 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
+            // gridColumn9
+            // 
+            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn9.AppearanceCell.Options.UseFont = true;
+            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn9.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn9.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn9.Caption = "품목명";
+            this.gridColumn9.FieldName = "ITEM_NM";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.ReadOnly = true;
+            this.gridColumn9.OptionsFilter.AllowFilter = false;
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 1;
+            this.gridColumn9.Width = 100;
+            // 
             // gridColumn2
             // 
             this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1169,7 +1216,7 @@
             this.gridColumn2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "LOT_NO", "{0}")});
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
@@ -1187,7 +1234,22 @@
             this.gridColumn3.OptionsColumn.ReadOnly = true;
             this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 3;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn10.AppearanceCell.Options.UseFont = true;
+            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn10.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn10.Caption = "단위";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.ReadOnly = true;
+            this.gridColumn10.OptionsFilter.AllowFilter = false;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 4;
             // 
             // gridColumn4
             // 
@@ -1205,7 +1267,7 @@
             this.gridColumn4.OptionsColumn.ReadOnly = true;
             this.gridColumn4.OptionsFilter.AllowFilter = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 5;
             // 
             // gridColumn5
             // 
@@ -1223,7 +1285,7 @@
             this.gridColumn5.OptionsColumn.ReadOnly = true;
             this.gridColumn5.OptionsFilter.AllowFilter = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 6;
             // 
             // gridColumn6
             // 
@@ -1241,7 +1303,7 @@
             this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.OptionsFilter.AllowFilter = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 7;
             // 
             // gridColumn7
             // 
@@ -1259,7 +1321,7 @@
             this.gridColumn7.OptionsColumn.ReadOnly = true;
             this.gridColumn7.OptionsFilter.AllowFilter = false;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.VisibleIndex = 8;
             // 
             // gridColumn8
             // 
@@ -1277,33 +1339,7 @@
             this.gridColumn8.OptionsColumn.ReadOnly = true;
             this.gridColumn8.OptionsFilter.AllowFilter = false;
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn9.AppearanceCell.Options.UseFont = true;
-            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn9.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn9.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn9.Caption = "gridColumn9";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.OptionsColumn.ReadOnly = true;
-            this.gridColumn9.OptionsFilter.AllowFilter = false;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn10.AppearanceCell.Options.UseFont = true;
-            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn10.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn10.Caption = "gridColumn10";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.OptionsColumn.ReadOnly = true;
-            this.gridColumn10.OptionsFilter.AllowFilter = false;
+            this.gridColumn8.VisibleIndex = 9;
             // 
             // gridColumn11
             // 
@@ -1313,10 +1349,14 @@
             this.gridColumn11.AppearanceHeader.Options.UseFont = true;
             this.gridColumn11.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn11.Caption = "gridColumn11";
+            this.gridColumn11.Caption = "관리상태";
+            this.gridColumn11.FieldName = "MGM_STATUS";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.ReadOnly = true;
             this.gridColumn11.OptionsFilter.AllowFilter = false;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 10;
+            this.gridColumn11.Width = 100;
             // 
             // gridColumn12
             // 
@@ -1326,10 +1366,14 @@
             this.gridColumn12.AppearanceHeader.Options.UseFont = true;
             this.gridColumn12.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn12.Caption = "gridColumn12";
+            this.gridColumn12.Caption = "입고일자";
+            this.gridColumn12.FieldName = "IN_DATE";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.ReadOnly = true;
             this.gridColumn12.OptionsFilter.AllowFilter = false;
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 11;
+            this.gridColumn12.Width = 100;
             // 
             // gridColumn13
             // 
@@ -1339,10 +1383,14 @@
             this.gridColumn13.AppearanceHeader.Options.UseFont = true;
             this.gridColumn13.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn13.Caption = "gridColumn13";
+            this.gridColumn13.Caption = "보관조건";
+            this.gridColumn13.FieldName = "STORE_CONDI";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.ReadOnly = true;
             this.gridColumn13.OptionsFilter.AllowFilter = false;
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 12;
+            this.gridColumn13.Width = 100;
             // 
             // gridColumn14
             // 
@@ -1443,7 +1491,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(666, 40);
+            this.panel4.Size = new System.Drawing.Size(867, 40);
             this.panel4.TabIndex = 7;
             // 
             // flowLayoutPanel1
@@ -1453,7 +1501,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnLoadExcel);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(464, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(665, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 38);
             this.flowLayoutPanel1.TabIndex = 3;
@@ -1466,7 +1514,8 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(44, 37);
             this.btnCancel.TabIndex = 13;
-            this.btnCancel.ToolTip = "중지";
+            this.btnCancel.ToolTip = "취소";
+            this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnInsertData
@@ -1514,7 +1563,7 @@
             this.navigationPage2.Properties.AppearanceCaption.Options.UseFont = true;
             this.navigationPage2.Properties.AppearanceCaption.Options.UseTextOptions = true;
             this.navigationPage2.Properties.AppearanceCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.navigationPage2.Size = new System.Drawing.Size(1328, 576);
+            this.navigationPage2.Size = new System.Drawing.Size(1528, 576);
             // 
             // panel7
             // 
@@ -1523,7 +1572,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1328, 576);
+            this.panel7.Size = new System.Drawing.Size(1528, 576);
             this.panel7.TabIndex = 9;
             // 
             // gridControl3
@@ -1532,7 +1581,7 @@
             this.gridControl3.Location = new System.Drawing.Point(0, 40);
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(1328, 536);
+            this.gridControl3.Size = new System.Drawing.Size(1528, 536);
             this.gridControl3.TabIndex = 8;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1541,6 +1590,7 @@
             // 
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn41,
+            this.gridColumn53,
             this.gridColumn42,
             this.gridColumn50,
             this.gridColumn43,
@@ -1553,7 +1603,6 @@
             this.gridColumn48,
             this.gridColumn51,
             this.gridColumn52,
-            this.gridColumn53,
             this.gridColumn54,
             this.gridColumn55,
             this.gridColumn56,
@@ -1565,6 +1614,9 @@
             this.gridView3.IndicatorWidth = 50;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsNavigation.AutoMoveRowFocus = false;
+            this.gridView3.OptionsSelection.CheckBoxSelectorColumnWidth = 50;
+            this.gridView3.OptionsSelection.MultiSelect = true;
+            this.gridView3.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView3.OptionsView.ColumnAutoWidth = false;
             this.gridView3.OptionsView.ShowFooter = true;
             this.gridView3.OptionsView.ShowGroupPanel = false;
@@ -1586,8 +1638,25 @@
             this.gridColumn41.OptionsColumn.ReadOnly = true;
             this.gridColumn41.OptionsFilter.AllowFilter = false;
             this.gridColumn41.Visible = true;
-            this.gridColumn41.VisibleIndex = 0;
+            this.gridColumn41.VisibleIndex = 1;
             this.gridColumn41.Width = 100;
+            // 
+            // gridColumn53
+            // 
+            this.gridColumn53.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn53.AppearanceCell.Options.UseFont = true;
+            this.gridColumn53.AppearanceHeader.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn53.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn53.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn53.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn53.Caption = "품목명";
+            this.gridColumn53.FieldName = "ITEM_NM";
+            this.gridColumn53.Name = "gridColumn53";
+            this.gridColumn53.OptionsColumn.ReadOnly = true;
+            this.gridColumn53.OptionsFilter.AllowFilter = false;
+            this.gridColumn53.Visible = true;
+            this.gridColumn53.VisibleIndex = 2;
+            this.gridColumn53.Width = 100;
             // 
             // gridColumn42
             // 
@@ -1607,7 +1676,7 @@
             this.gridColumn42.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "LOT_NO", "{0}")});
             this.gridColumn42.Visible = true;
-            this.gridColumn42.VisibleIndex = 1;
+            this.gridColumn42.VisibleIndex = 3;
             this.gridColumn42.Width = 100;
             // 
             // gridColumn50
@@ -1626,7 +1695,7 @@
             this.gridColumn50.OptionsFilter.AllowFilter = false;
             this.gridColumn50.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.gridColumn50.Visible = true;
-            this.gridColumn50.VisibleIndex = 2;
+            this.gridColumn50.VisibleIndex = 4;
             this.gridColumn50.Width = 100;
             // 
             // gridColumn43
@@ -1645,7 +1714,7 @@
             this.gridColumn43.OptionsColumn.ReadOnly = true;
             this.gridColumn43.OptionsFilter.AllowFilter = false;
             this.gridColumn43.Visible = true;
-            this.gridColumn43.VisibleIndex = 3;
+            this.gridColumn43.VisibleIndex = 5;
             this.gridColumn43.Width = 100;
             // 
             // gridColumn61
@@ -1664,7 +1733,7 @@
             this.gridColumn61.OptionsColumn.ReadOnly = true;
             this.gridColumn61.OptionsFilter.AllowFilter = false;
             this.gridColumn61.Visible = true;
-            this.gridColumn61.VisibleIndex = 4;
+            this.gridColumn61.VisibleIndex = 6;
             this.gridColumn61.Width = 50;
             // 
             // gridColumn49
@@ -1685,7 +1754,7 @@
             this.gridColumn49.OptionsFilter.AllowFilter = false;
             this.gridColumn49.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.gridColumn49.Visible = true;
-            this.gridColumn49.VisibleIndex = 5;
+            this.gridColumn49.VisibleIndex = 7;
             this.gridColumn49.Width = 120;
             // 
             // gridColumn44
@@ -1704,7 +1773,7 @@
             this.gridColumn44.OptionsColumn.ReadOnly = true;
             this.gridColumn44.OptionsFilter.AllowFilter = false;
             this.gridColumn44.Visible = true;
-            this.gridColumn44.VisibleIndex = 6;
+            this.gridColumn44.VisibleIndex = 8;
             this.gridColumn44.Width = 100;
             // 
             // gridColumn45
@@ -1723,7 +1792,7 @@
             this.gridColumn45.OptionsColumn.ReadOnly = true;
             this.gridColumn45.OptionsFilter.AllowFilter = false;
             this.gridColumn45.Visible = true;
-            this.gridColumn45.VisibleIndex = 7;
+            this.gridColumn45.VisibleIndex = 9;
             this.gridColumn45.Width = 100;
             // 
             // gridColumn46
@@ -1742,7 +1811,7 @@
             this.gridColumn46.OptionsColumn.ReadOnly = true;
             this.gridColumn46.OptionsFilter.AllowFilter = false;
             this.gridColumn46.Visible = true;
-            this.gridColumn46.VisibleIndex = 8;
+            this.gridColumn46.VisibleIndex = 10;
             this.gridColumn46.Width = 100;
             // 
             // gridColumn47
@@ -1761,7 +1830,7 @@
             this.gridColumn47.OptionsColumn.ReadOnly = true;
             this.gridColumn47.OptionsFilter.AllowFilter = false;
             this.gridColumn47.Visible = true;
-            this.gridColumn47.VisibleIndex = 9;
+            this.gridColumn47.VisibleIndex = 11;
             this.gridColumn47.Width = 100;
             // 
             // gridColumn48
@@ -1780,7 +1849,7 @@
             this.gridColumn48.OptionsColumn.ReadOnly = true;
             this.gridColumn48.OptionsFilter.AllowFilter = false;
             this.gridColumn48.Visible = true;
-            this.gridColumn48.VisibleIndex = 10;
+            this.gridColumn48.VisibleIndex = 12;
             this.gridColumn48.Width = 100;
             // 
             // gridColumn51
@@ -1799,7 +1868,7 @@
             this.gridColumn51.OptionsColumn.ReadOnly = true;
             this.gridColumn51.OptionsFilter.AllowFilter = false;
             this.gridColumn51.Visible = true;
-            this.gridColumn51.VisibleIndex = 11;
+            this.gridColumn51.VisibleIndex = 13;
             this.gridColumn51.Width = 100;
             // 
             // gridColumn52
@@ -1818,21 +1887,8 @@
             this.gridColumn52.OptionsColumn.ReadOnly = true;
             this.gridColumn52.OptionsFilter.AllowFilter = false;
             this.gridColumn52.Visible = true;
-            this.gridColumn52.VisibleIndex = 12;
+            this.gridColumn52.VisibleIndex = 14;
             this.gridColumn52.Width = 100;
-            // 
-            // gridColumn53
-            // 
-            this.gridColumn53.AppearanceCell.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn53.AppearanceCell.Options.UseFont = true;
-            this.gridColumn53.AppearanceHeader.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn53.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn53.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn53.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn53.Caption = "----";
-            this.gridColumn53.Name = "gridColumn53";
-            this.gridColumn53.OptionsColumn.ReadOnly = true;
-            this.gridColumn53.OptionsFilter.AllowFilter = false;
             // 
             // gridColumn54
             // 
@@ -1928,13 +1984,26 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.btnLBL_QTY);
             this.panel8.Controls.Add(this.label4);
             this.panel8.Controls.Add(this.flowLayoutPanel3);
+            this.panel8.Controls.Add(this.txtLBL_QTY);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1328, 40);
+            this.panel8.Size = new System.Drawing.Size(1528, 40);
             this.panel8.TabIndex = 7;
+            // 
+            // btnLBL_QTY
+            // 
+            this.btnLBL_QTY.Appearance.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLBL_QTY.Appearance.Options.UseFont = true;
+            this.btnLBL_QTY.Location = new System.Drawing.Point(624, 4);
+            this.btnLBL_QTY.Name = "btnLBL_QTY";
+            this.btnLBL_QTY.Size = new System.Drawing.Size(150, 29);
+            this.btnLBL_QTY.TabIndex = 6;
+            this.btnLBL_QTY.Text = "라벨수량 일괄적용";
+            this.btnLBL_QTY.Click += new System.EventHandler(this.btnLBL_QTY_Click);
             // 
             // label4
             // 
@@ -1955,7 +2024,7 @@
             this.flowLayoutPanel3.Controls.Add(this.btnOpen);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(1126, 0);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(1326, 0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(200, 38);
             this.flowLayoutPanel3.TabIndex = 3;
@@ -1995,7 +2064,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnOpen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOpen.ImageOptions.Image")));
             this.btnOpen.Location = new System.Drawing.Point(3, 0);
             this.btnOpen.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.btnOpen.Name = "btnOpen";
@@ -2004,11 +2073,29 @@
             this.btnOpen.ToolTip = "엑셀파일열기";
             this.btnOpen.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
+            // txtLBL_QTY
+            // 
+            this.txtLBL_QTY.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtLBL_QTY.Location = new System.Drawing.Point(496, 6);
+            this.txtLBL_QTY.Name = "txtLBL_QTY";
+            this.txtLBL_QTY.Properties.Appearance.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtLBL_QTY.Properties.Appearance.Options.UseFont = true;
+            this.txtLBL_QTY.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtLBL_QTY.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtLBL_QTY.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txtLBL_QTY.Size = new System.Drawing.Size(122, 26);
+            this.txtLBL_QTY.TabIndex = 5;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1484, 681);
+            this.ClientSize = new System.Drawing.Size(1684, 681);
             this.Controls.Add(this.navigationPane1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -2048,6 +2135,7 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtLBL_QTY.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2177,6 +2265,8 @@
         private DevExpress.XtraEditors.SimpleButton btnSaveExcel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private DevExpress.XtraEditors.SimpleButton btnLBL_QTY;
+        private DevExpress.XtraEditors.SpinEdit txtLBL_QTY;
     }
 }
 
