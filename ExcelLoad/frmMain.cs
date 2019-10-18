@@ -88,6 +88,7 @@ namespace ExcelLoad
                     {
                         transaction.Rollback();
                         btnCancel.Visible = false;
+                        Application.DoEvents();
                         break;
                     }
 
@@ -125,8 +126,8 @@ namespace ExcelLoad
                     {
                         InsertStockData(i, transaction);
                         gridView1.FocusedRowHandle = i + 1;
-                        Application.DoEvents();
                     }
+                    Application.DoEvents();
                 }
             }
             catch(Exception ex)
@@ -361,6 +362,7 @@ namespace ExcelLoad
             if (DBUtils.sqlConnection == null) return;
             try
             {
+
                 ITEM_NO     = gridView1.GetRowCellValue(grid1RowHandle, "ITEM_NO").ToString();
                 LOT_NO      = gridView1.GetRowCellValue(grid1RowHandle, "LOT_NO").ToString();
                 ITEM_QTY    = gridView1.GetRowCellValue(grid1RowHandle, "ITEM_QTY").ToString();
@@ -371,9 +373,12 @@ namespace ExcelLoad
                 MADEIN_NM   = gridView1.GetRowCellValue(grid1RowHandle, "MADEIN_NM").ToString();
                 VENDOR_NM   = gridView1.GetRowCellValue(grid1RowHandle, "VENDOR_NM").ToString();
                 STOCK_SEQ   = getSeqNo(transaction);
-                LBL_NO      = (ITEM_NO == "PALLET" ? LOT_NO : getLabelNo(ITEM_NO, LOT_NO, transaction));
                 UNIT        = getUnit(ITEM_NO, transaction);
-                IN_DATE     = DateTime.Now.ToString("yyyyMMdd");
+                IN_DATE     = gridView1.GetRowCellValue(grid1RowHandle, "IN_DATE").ToString();
+
+                IN_DATE     = IN_DATE.Contains("N/A") || IN_DATE == ""                ? "" : IN_DATE;
+                USE_DEADLN  = USE_DEADLN.Contains("N/A") || USE_DEADLN.Contains("")   ? "" : USE_DEADLN;
+                MADEIN_DATE = MADEIN_DATE.Contains("N/A") || MADEIN_DATE.Contains("") ? "" : MADEIN_DATE;
 
                 // 작은 따옴표 있는지 확인 후 있으면 작은 따옴표를 2개 붙임
                 ITEM_NO     = ITEM_NO.Contains("'")     ? withSingleQuotedString(ITEM_NO)     : ITEM_NO;
@@ -385,21 +390,63 @@ namespace ExcelLoad
                 MADEIN_DATE = MADEIN_DATE.Contains("'") ? withSingleQuotedString(MADEIN_DATE) : MADEIN_DATE;
                 MADEIN_NM   = MADEIN_NM.Contains("'")   ? withSingleQuotedString(MADEIN_NM)   : MADEIN_NM;
                 VENDOR_NM   = VENDOR_NM.Contains("'")   ? withSingleQuotedString(VENDOR_NM)   : VENDOR_NM;
-                
+
+                // 제품의 라벨번호는 ITEM_NO + LOTNO
+                if (gridView1.GetRowCellValue(grid1RowHandle, "ASSET_CLASS").ToString().Contains("제품"))
+                {
+                    LBL_NO = ITEM_NO + LOT_NO;
+                    strSQL = "INSERT INTO W_LABEL(COMP,       ITEM_NO,           LOT_NO,           LBL_NO) " + Environment.NewLine +
+                             "             VALUES('100', '" + ITEM_NO + "', '" + LOT_NO + "', '" + LBL_NO + "')";
+                    DBUtils.InsertData(strSQL, transaction);
+                }
+                else // 원부자재의 라벨번호는 프로시저로 가져옴
+                {
+                    LBL_NO = (ITEM_NO == "PALLET" ? LOT_NO : getLabelNo(ITEM_NO, LOT_NO, transaction));
+                }
+
                 strSQL = " INSERT INTO W_STOCK ( WMS,               LOC,              ITEM_NO,             LOT_NO,              ITEM_QTY, " + Environment.NewLine +
                          "                       MGM_STATUS,        USE_DEADLN,       IN_DATE,             MADEIN_NO,           MADEIN_DATE, " + Environment.NewLine +
                          "                       MADEIN_NM,         VENDOR_NM,        STOCK_SEQ,           PRE_STOCK_SEQ,       LBL_NO, " + Environment.NewLine +
-                         "                       REQ_NO,            REQ_SEQ,          REQ_ERP_CD,          REQ_ERP_SEQ,         PLAN_SEQ," + Environment.NewLine +
-                         "                       REQ_DATE,          IN_TYPE,          BIGO,                CRT_IP,              CRT_PC, " + Environment.NewLine +
-                         "                       CRT_MENU) " + Environment.NewLine +
-                         "              VALUES ('1001',               '1001000001', '"         + ITEM_NO   + "', '" + LOT_NO         + "', '" + ITEM_QTY + "', " + Environment.NewLine +
-                         "                      '" + MGM_STATUS + "', '" + USE_DEADLN + "', '" + IN_DATE   + "', '" + MADEIN_NO      + "', '" + MADEIN_DATE + "'," + Environment.NewLine +
-                         "                      '" + MADEIN_NM  + "', '" + VENDOR_NM  + "', '" + STOCK_SEQ + "', '" + STOCK_SEQ      + "', '" + LBL_NO + "', " + Environment.NewLine +
-                         "                      '',                   '',                   '',                  '',                   '',  " + Environment.NewLine +
-                         "                      '',                   '29',                 '재고이관', '" + DBUtils.ClientIPAddress + "', '" + DBUtils.ClientPcName + "'," + Environment.NewLine +
-                         "                      'PC')";
-
+                         "                       REQ_NO,            REQ_SEQ,          REQ_ERP_CD,          REQ_ERP_SEQ,         PLAN_SEQ, " + Environment.NewLine +
+                         "                       REQ_DATE,          IN_TYPE,          BIGO,                UNIT,                CRT_IP, " + Environment.NewLine +
+                         "                       CRT_PC,            CRT_MENU,         IN_DT) " + Environment.NewLine +
+                         "              VALUES ('1001',               '1001000001', '"         + ITEM_NO   + "',     '" + LOT_NO         + "', '" + ITEM_QTY + "', " + Environment.NewLine +
+                         "                      '" + MGM_STATUS + "', '" + USE_DEADLN + "', '" + IN_DATE   + "',     '" + MADEIN_NO      + "', '" + MADEIN_DATE + "'," + Environment.NewLine +
+                         "                      '" + MADEIN_NM  + "', '" + VENDOR_NM  + "', '" + STOCK_SEQ + "',     '" + STOCK_SEQ      + "', '" + LBL_NO + "', " + Environment.NewLine +
+                         "                      '',                   '',                   '',                      '',                   '',  " + Environment.NewLine +
+                         "                      '',                   '29',                 '재고이관',              '" + UNIT + "',  '" + DBUtils.ClientIPAddress + "', " +  Environment.NewLine +
+                         "                      '" + DBUtils.ClientPcName + "', 'PC', CONVERT(DATETIME, '" + IN_DATE + "'))";
+                // W_STOCK에 INSERT
                 DBUtils.InsertData(strSQL, transaction);
+
+                // W_STOCK_HIST에 이력 INSERT
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Transaction = transaction;
+                    command.Connection = DBUtils.sqlConnection;
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "A_LOG_STOCK";
+                    command.Parameters.Add("@rCOMP", SqlDbType.NVarChar).Value = "100";
+                    command.Parameters.Add("@rSTOCK_SEQ", SqlDbType.NVarChar).Value = STOCK_SEQ;
+                    command.Parameters.Add("@rIO_KIND", SqlDbType.NVarChar).Value = "조정";
+                    command.Parameters.Add("@rIO_NO", SqlDbType.NVarChar).Value = "";
+                    command.Parameters.Add("@rIO_SEQ", SqlDbType.NVarChar).Value = "";
+                    command.Parameters.Add("@rIO_MSG", SqlDbType.NVarChar).Value = "재고이관";
+                    command.Parameters.Add("@rQTY", SqlDbType.NVarChar).Value = ITEM_QTY;
+                    command.Parameters.Add("@rLOC_FROM", SqlDbType.NVarChar).Value = "1001000001";
+                    command.Parameters.Add("@rLOC_TO", SqlDbType.NVarChar).Value = "1001000001";
+
+                    command.Parameters.Add("@rPGM_ID", SqlDbType.NVarChar).Value = "재고이관";
+                    command.Parameters.Add("@rPGM_NM", SqlDbType.NVarChar).Value = "재고이관";
+                    command.Parameters.Add("@rEVENT_NM", SqlDbType.NVarChar).Value = "재고이관";
+                    command.Parameters.Add("@rMSG", SqlDbType.NVarChar).Value = "재고이관";
+                    command.Parameters.Add("@rCRT_USR", SqlDbType.NVarChar).Value = "SYSTEM";
+                    command.Parameters.Add("@rCRT_PC", SqlDbType.NVarChar).Value = "PC";
+                    command.Parameters.Add("@rCRT_IP", SqlDbType.NVarChar).Value = "";
+                    command.Parameters.Add("@rCRT_MENU", SqlDbType.NVarChar).Value = "PC";
+                    command.Parameters.Add("@rRET_MSG", SqlDbType.NVarChar, 4000).Direction = ParameterDirection.Output;
+                    command.ExecuteNonQuery();
+                }
                 FileUtils.WriteLog("데이터 삽입 : " + ITEM_NO + ", " + LOT_NO);
             }
             catch (Exception ex)
@@ -407,7 +454,12 @@ namespace ExcelLoad
                 throw ex;
             }
         }
-        
+
+        /// <summary>
+        /// 작은따옴표가 있는 문자열의 경우 작은따옴표를 하나 더 붙임
+        /// </summary>
+        /// <param name="TargetString"></param>
+        /// <returns></returns>
         private string withSingleQuotedString(string TargetString)
         {
             if (!TargetString.Contains("'")) return null;

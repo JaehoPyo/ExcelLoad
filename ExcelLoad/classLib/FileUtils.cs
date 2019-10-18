@@ -58,7 +58,7 @@ namespace ExcelLoad.classLib
             DirectoryInfo directory = new DirectoryInfo(LogFilePath);
             directory.Create();
             
-            if (!File.Exists(filePath))
+            if (File.Exists(filePath))
             {
                 FileStream LogFile = new FileStream(filePath, FileMode.Append, FileAccess.Write);
 
