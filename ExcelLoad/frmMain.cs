@@ -395,9 +395,19 @@ namespace ExcelLoad
                 if (gridView1.GetRowCellValue(grid1RowHandle, "ASSET_CLASS").ToString().Contains("제품"))
                 {
                     LBL_NO = ITEM_NO + LOT_NO;
-                    strSQL = "INSERT INTO W_LABEL(COMP,       ITEM_NO,           LOT_NO,           LBL_NO) " + Environment.NewLine +
-                             "             VALUES('100', '" + ITEM_NO + "', '" + LOT_NO + "', '" + LBL_NO + "')";
-                    DBUtils.InsertData(strSQL, transaction);
+                    strSQL = "SELECT LBL_NO FROM W_LABEL WHERE ITEM_NO = '" + ITEM_NO + "'";
+
+                    DataTable tempTable = DBUtils.getSelectResultTableOrNull(strSQL, transaction);
+
+                    if (tempTable != null)
+                    {
+                        if (tempTable.Rows.Count == 0)
+                        {
+                            strSQL = "INSERT INTO W_LABEL(COMP,       ITEM_NO,           LOT_NO,           LBL_NO) " + Environment.NewLine +
+                                     "             VALUES('100', '" + ITEM_NO + "', '" + LOT_NO + "', '" + LBL_NO + "')";
+                            DBUtils.InsertData(strSQL, transaction);
+                        }
+                    }
                 }
                 else // 원부자재의 라벨번호는 프로시저로 가져옴
                 {

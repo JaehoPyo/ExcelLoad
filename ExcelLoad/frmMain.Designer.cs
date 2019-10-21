@@ -300,6 +300,7 @@
             this.gridColumn70,
             this.gridColumn63,
             this.gridColumn64,
+            this.gridColumn74,
             this.gridColumn65,
             this.gridColumn66,
             this.gridColumn67,
@@ -308,7 +309,6 @@
             this.gridColumn71,
             this.gridColumn72,
             this.gridColumn73,
-            this.gridColumn74,
             this.gridColumn75,
             this.gridColumn76,
             this.gridColumn77,
@@ -334,7 +334,7 @@
             this.gridColumn62.AppearanceHeader.Options.UseFont = true;
             this.gridColumn62.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn62.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn62.Caption = "품목코드";
+            this.gridColumn62.Caption = "ITEM_NO";
             this.gridColumn62.FieldName = "ITEM_NO";
             this.gridColumn62.Name = "gridColumn62";
             this.gridColumn62.OptionsColumn.ReadOnly = true;
@@ -350,7 +350,7 @@
             this.gridColumn70.AppearanceHeader.Options.UseFont = true;
             this.gridColumn70.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn70.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn70.Caption = "품목명";
+            this.gridColumn70.Caption = "ITEM_NM";
             this.gridColumn70.FieldName = "ITEM_NM";
             this.gridColumn70.Name = "gridColumn70";
             this.gridColumn70.OptionsColumn.ReadOnly = true;
@@ -368,7 +368,7 @@
             this.gridColumn63.AppearanceHeader.Options.UseFont = true;
             this.gridColumn63.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn63.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn63.Caption = "재고번호";
+            this.gridColumn63.Caption = "LOT_NO";
             this.gridColumn63.FieldName = "LOT_NO";
             this.gridColumn63.Name = "gridColumn63";
             this.gridColumn63.OptionsColumn.ReadOnly = true;
@@ -388,7 +388,7 @@
             this.gridColumn64.AppearanceHeader.Options.UseFont = true;
             this.gridColumn64.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn64.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn64.Caption = "수량";
+            this.gridColumn64.Caption = "ITEM_QTY";
             this.gridColumn64.FieldName = "ITEM_QTY";
             this.gridColumn64.Name = "gridColumn64";
             this.gridColumn64.OptionsColumn.ReadOnly = true;
@@ -406,13 +406,13 @@
             this.gridColumn65.AppearanceHeader.Options.UseFont = true;
             this.gridColumn65.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn65.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn65.Caption = "사용기한";
+            this.gridColumn65.Caption = "USE_DEADLN";
             this.gridColumn65.FieldName = "USE_DEADLN";
             this.gridColumn65.Name = "gridColumn65";
             this.gridColumn65.OptionsColumn.ReadOnly = true;
             this.gridColumn65.OptionsFilter.AllowFilter = false;
             this.gridColumn65.Visible = true;
-            this.gridColumn65.VisibleIndex = 4;
+            this.gridColumn65.VisibleIndex = 5;
             // 
             // gridColumn66
             // 
@@ -424,13 +424,13 @@
             this.gridColumn66.AppearanceHeader.Options.UseFont = true;
             this.gridColumn66.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn66.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn66.Caption = "제조번호";
+            this.gridColumn66.Caption = "MADEIN_NO";
             this.gridColumn66.FieldName = "MADEIN_NO";
             this.gridColumn66.Name = "gridColumn66";
             this.gridColumn66.OptionsColumn.ReadOnly = true;
             this.gridColumn66.OptionsFilter.AllowFilter = false;
             this.gridColumn66.Visible = true;
-            this.gridColumn66.VisibleIndex = 5;
+            this.gridColumn66.VisibleIndex = 6;
             // 
             // gridColumn67
             // 
@@ -442,13 +442,13 @@
             this.gridColumn67.AppearanceHeader.Options.UseFont = true;
             this.gridColumn67.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn67.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn67.Caption = "제조일자";
+            this.gridColumn67.Caption = "MADEIN_DATE";
             this.gridColumn67.FieldName = "MADEIN_DATE";
             this.gridColumn67.Name = "gridColumn67";
             this.gridColumn67.OptionsColumn.ReadOnly = true;
             this.gridColumn67.OptionsFilter.AllowFilter = false;
             this.gridColumn67.Visible = true;
-            this.gridColumn67.VisibleIndex = 6;
+            this.gridColumn67.VisibleIndex = 7;
             // 
             // gridColumn68
             // 
@@ -460,13 +460,13 @@
             this.gridColumn68.AppearanceHeader.Options.UseFont = true;
             this.gridColumn68.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn68.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn68.Caption = "제조사명";
+            this.gridColumn68.Caption = "MADEIN_NM";
             this.gridColumn68.FieldName = "MADEIN_NM";
             this.gridColumn68.Name = "gridColumn68";
             this.gridColumn68.OptionsColumn.ReadOnly = true;
             this.gridColumn68.OptionsFilter.AllowFilter = false;
             this.gridColumn68.Visible = true;
-            this.gridColumn68.VisibleIndex = 7;
+            this.gridColumn68.VisibleIndex = 8;
             // 
             // gridColumn69
             // 
@@ -478,13 +478,13 @@
             this.gridColumn69.AppearanceHeader.Options.UseFont = true;
             this.gridColumn69.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn69.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn69.Caption = "구매처명";
+            this.gridColumn69.Caption = "VENDOR_NM";
             this.gridColumn69.FieldName = "VENDOR_NM";
             this.gridColumn69.Name = "gridColumn69";
             this.gridColumn69.OptionsColumn.ReadOnly = true;
             this.gridColumn69.OptionsFilter.AllowFilter = false;
             this.gridColumn69.Visible = true;
-            this.gridColumn69.VisibleIndex = 8;
+            this.gridColumn69.VisibleIndex = 9;
             // 
             // gridColumn71
             // 
@@ -494,13 +494,13 @@
             this.gridColumn71.AppearanceHeader.Options.UseFont = true;
             this.gridColumn71.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn71.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn71.Caption = "관리상태";
+            this.gridColumn71.Caption = "MGM_STATUS";
             this.gridColumn71.FieldName = "MGM_STATUS";
             this.gridColumn71.Name = "gridColumn71";
             this.gridColumn71.OptionsColumn.ReadOnly = true;
             this.gridColumn71.OptionsFilter.AllowFilter = false;
             this.gridColumn71.Visible = true;
-            this.gridColumn71.VisibleIndex = 9;
+            this.gridColumn71.VisibleIndex = 10;
             // 
             // gridColumn72
             // 
@@ -510,13 +510,13 @@
             this.gridColumn72.AppearanceHeader.Options.UseFont = true;
             this.gridColumn72.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn72.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn72.Caption = "입고일자";
+            this.gridColumn72.Caption = "IN_DATE";
             this.gridColumn72.FieldName = "IN_DATE";
             this.gridColumn72.Name = "gridColumn72";
             this.gridColumn72.OptionsColumn.ReadOnly = true;
             this.gridColumn72.OptionsFilter.AllowFilter = false;
             this.gridColumn72.Visible = true;
-            this.gridColumn72.VisibleIndex = 10;
+            this.gridColumn72.VisibleIndex = 11;
             // 
             // gridColumn73
             // 
@@ -526,13 +526,13 @@
             this.gridColumn73.AppearanceHeader.Options.UseFont = true;
             this.gridColumn73.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn73.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn73.Caption = "보관조건";
+            this.gridColumn73.Caption = "STORE_CONDI";
             this.gridColumn73.FieldName = "STORE_CONDI";
             this.gridColumn73.Name = "gridColumn73";
             this.gridColumn73.OptionsColumn.ReadOnly = true;
             this.gridColumn73.OptionsFilter.AllowFilter = false;
             this.gridColumn73.Visible = true;
-            this.gridColumn73.VisibleIndex = 11;
+            this.gridColumn73.VisibleIndex = 12;
             // 
             // gridColumn74
             // 
@@ -542,10 +542,13 @@
             this.gridColumn74.AppearanceHeader.Options.UseFont = true;
             this.gridColumn74.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn74.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn74.Caption = "gridColumn13";
+            this.gridColumn74.Caption = "UNIT";
+            this.gridColumn74.FieldName = "UNIT";
             this.gridColumn74.Name = "gridColumn74";
             this.gridColumn74.OptionsColumn.ReadOnly = true;
             this.gridColumn74.OptionsFilter.AllowFilter = false;
+            this.gridColumn74.Visible = true;
+            this.gridColumn74.VisibleIndex = 4;
             // 
             // gridColumn75
             // 
@@ -555,10 +558,12 @@
             this.gridColumn75.AppearanceHeader.Options.UseFont = true;
             this.gridColumn75.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn75.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn75.Caption = "gridColumn14";
+            this.gridColumn75.Caption = "ASSET_CLASS";
             this.gridColumn75.Name = "gridColumn75";
             this.gridColumn75.OptionsColumn.ReadOnly = true;
             this.gridColumn75.OptionsFilter.AllowFilter = false;
+            this.gridColumn75.Visible = true;
+            this.gridColumn75.VisibleIndex = 13;
             // 
             // gridColumn76
             // 
@@ -719,6 +724,7 @@
             this.gridColumn29,
             this.gridColumn22,
             this.gridColumn23,
+            this.gridColumn33,
             this.gridColumn24,
             this.gridColumn25,
             this.gridColumn26,
@@ -727,7 +733,6 @@
             this.gridColumn30,
             this.gridColumn31,
             this.gridColumn32,
-            this.gridColumn33,
             this.gridColumn34,
             this.gridColumn35,
             this.gridColumn36,
@@ -753,7 +758,7 @@
             this.gridColumn21.AppearanceHeader.Options.UseFont = true;
             this.gridColumn21.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn21.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn21.Caption = "품목코드";
+            this.gridColumn21.Caption = "ITEM_NO";
             this.gridColumn21.FieldName = "ITEM_NO";
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.OptionsColumn.ReadOnly = true;
@@ -769,7 +774,7 @@
             this.gridColumn29.AppearanceHeader.Options.UseFont = true;
             this.gridColumn29.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn29.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn29.Caption = "품목명";
+            this.gridColumn29.Caption = "ITEM_NM";
             this.gridColumn29.FieldName = "ITEM_NM";
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.OptionsColumn.ReadOnly = true;
@@ -787,7 +792,7 @@
             this.gridColumn22.AppearanceHeader.Options.UseFont = true;
             this.gridColumn22.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn22.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn22.Caption = "재고번호";
+            this.gridColumn22.Caption = "LOT_NO";
             this.gridColumn22.FieldName = "LOT_NO";
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.OptionsColumn.ReadOnly = true;
@@ -807,7 +812,7 @@
             this.gridColumn23.AppearanceHeader.Options.UseFont = true;
             this.gridColumn23.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn23.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn23.Caption = "수량";
+            this.gridColumn23.Caption = "ITEM_QTY";
             this.gridColumn23.FieldName = "ITEM_QTY";
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.OptionsColumn.ReadOnly = true;
@@ -825,13 +830,13 @@
             this.gridColumn24.AppearanceHeader.Options.UseFont = true;
             this.gridColumn24.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn24.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn24.Caption = "사용기한";
+            this.gridColumn24.Caption = "USE_DEADLN";
             this.gridColumn24.FieldName = "USE_DEADLN";
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.OptionsColumn.ReadOnly = true;
             this.gridColumn24.OptionsFilter.AllowFilter = false;
             this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 4;
+            this.gridColumn24.VisibleIndex = 5;
             // 
             // gridColumn25
             // 
@@ -843,13 +848,13 @@
             this.gridColumn25.AppearanceHeader.Options.UseFont = true;
             this.gridColumn25.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn25.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn25.Caption = "제조번호";
+            this.gridColumn25.Caption = "MADEIN_NO";
             this.gridColumn25.FieldName = "MADEIN_NO";
             this.gridColumn25.Name = "gridColumn25";
             this.gridColumn25.OptionsColumn.ReadOnly = true;
             this.gridColumn25.OptionsFilter.AllowFilter = false;
             this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 5;
+            this.gridColumn25.VisibleIndex = 6;
             // 
             // gridColumn26
             // 
@@ -861,13 +866,13 @@
             this.gridColumn26.AppearanceHeader.Options.UseFont = true;
             this.gridColumn26.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn26.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn26.Caption = "제조일자";
+            this.gridColumn26.Caption = "MADEIN_DATE";
             this.gridColumn26.FieldName = "MADEIN_DATE";
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.OptionsColumn.ReadOnly = true;
             this.gridColumn26.OptionsFilter.AllowFilter = false;
             this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 6;
+            this.gridColumn26.VisibleIndex = 7;
             // 
             // gridColumn27
             // 
@@ -879,13 +884,13 @@
             this.gridColumn27.AppearanceHeader.Options.UseFont = true;
             this.gridColumn27.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn27.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn27.Caption = "제조사명";
+            this.gridColumn27.Caption = "MADEIN_NM";
             this.gridColumn27.FieldName = "MADEIN_NM";
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.OptionsColumn.ReadOnly = true;
             this.gridColumn27.OptionsFilter.AllowFilter = false;
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 7;
+            this.gridColumn27.VisibleIndex = 8;
             // 
             // gridColumn28
             // 
@@ -897,13 +902,13 @@
             this.gridColumn28.AppearanceHeader.Options.UseFont = true;
             this.gridColumn28.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn28.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn28.Caption = "구매처명";
+            this.gridColumn28.Caption = "VENDOR_NM";
             this.gridColumn28.FieldName = "VENDOR_NM";
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.OptionsColumn.ReadOnly = true;
             this.gridColumn28.OptionsFilter.AllowFilter = false;
             this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 8;
+            this.gridColumn28.VisibleIndex = 9;
             // 
             // gridColumn30
             // 
@@ -913,13 +918,13 @@
             this.gridColumn30.AppearanceHeader.Options.UseFont = true;
             this.gridColumn30.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn30.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn30.Caption = "관리상태";
+            this.gridColumn30.Caption = "MGM_STATUS";
             this.gridColumn30.FieldName = "MGM_STATUS";
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.OptionsColumn.ReadOnly = true;
             this.gridColumn30.OptionsFilter.AllowFilter = false;
             this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 9;
+            this.gridColumn30.VisibleIndex = 10;
             this.gridColumn30.Width = 100;
             // 
             // gridColumn31
@@ -930,13 +935,13 @@
             this.gridColumn31.AppearanceHeader.Options.UseFont = true;
             this.gridColumn31.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn31.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn31.Caption = "입고일자";
+            this.gridColumn31.Caption = "IN_DATE";
             this.gridColumn31.FieldName = "IN_DATE";
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.OptionsColumn.ReadOnly = true;
             this.gridColumn31.OptionsFilter.AllowFilter = false;
             this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 10;
+            this.gridColumn31.VisibleIndex = 11;
             this.gridColumn31.Width = 100;
             // 
             // gridColumn32
@@ -947,13 +952,13 @@
             this.gridColumn32.AppearanceHeader.Options.UseFont = true;
             this.gridColumn32.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn32.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn32.Caption = "보관조건";
+            this.gridColumn32.Caption = "STORE_CONDI";
             this.gridColumn32.FieldName = "STORE_CONDI";
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.OptionsColumn.ReadOnly = true;
             this.gridColumn32.OptionsFilter.AllowFilter = false;
             this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 11;
+            this.gridColumn32.VisibleIndex = 12;
             this.gridColumn32.Width = 100;
             // 
             // gridColumn33
@@ -964,10 +969,13 @@
             this.gridColumn33.AppearanceHeader.Options.UseFont = true;
             this.gridColumn33.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn33.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn33.Caption = "gridColumn13";
+            this.gridColumn33.Caption = "UNIT";
+            this.gridColumn33.FieldName = "UNIT";
             this.gridColumn33.Name = "gridColumn33";
             this.gridColumn33.OptionsColumn.ReadOnly = true;
             this.gridColumn33.OptionsFilter.AllowFilter = false;
+            this.gridColumn33.Visible = true;
+            this.gridColumn33.VisibleIndex = 4;
             // 
             // gridColumn34
             // 
@@ -977,10 +985,13 @@
             this.gridColumn34.AppearanceHeader.Options.UseFont = true;
             this.gridColumn34.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn34.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn34.Caption = "gridColumn14";
+            this.gridColumn34.Caption = "ASSET_CLASS";
+            this.gridColumn34.FieldName = "ASSET_CLASS";
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.OptionsColumn.ReadOnly = true;
             this.gridColumn34.OptionsFilter.AllowFilter = false;
+            this.gridColumn34.Visible = true;
+            this.gridColumn34.VisibleIndex = 13;
             // 
             // gridColumn35
             // 
