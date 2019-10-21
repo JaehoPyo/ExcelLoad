@@ -376,7 +376,7 @@ namespace ExcelLoad
                 UNIT        = getUnit(ITEM_NO, transaction);
                 IN_DATE     = gridView1.GetRowCellValue(grid1RowHandle, "IN_DATE").ToString();
 
-                IN_DATE     = IN_DATE.Contains("N/A") || IN_DATE == ""                ? "" : IN_DATE;
+                IN_DATE     = IN_DATE.Contains("N/A") || IN_DATE == ""                ? "20180101" : IN_DATE;
                 USE_DEADLN  = USE_DEADLN.Contains("N/A") || USE_DEADLN.Contains("")   ? "" : USE_DEADLN;
                 MADEIN_DATE = MADEIN_DATE.Contains("N/A") || MADEIN_DATE.Contains("") ? "" : MADEIN_DATE;
 
@@ -409,13 +409,13 @@ namespace ExcelLoad
                          "                       MADEIN_NM,         VENDOR_NM,        STOCK_SEQ,           PRE_STOCK_SEQ,       LBL_NO, " + Environment.NewLine +
                          "                       REQ_NO,            REQ_SEQ,          REQ_ERP_CD,          REQ_ERP_SEQ,         PLAN_SEQ, " + Environment.NewLine +
                          "                       REQ_DATE,          IN_TYPE,          BIGO,                UNIT,                CRT_IP, " + Environment.NewLine +
-                         "                       CRT_PC,            CRT_MENU,         IN_DT) " + Environment.NewLine +
+                         "                       CRT_PC,            CRT_MENU,         IN_DT,               TEST_NO,             TEST_REQ_NO) " + Environment.NewLine +
                          "              VALUES ('1001',               '1001000001', '"         + ITEM_NO   + "',     '" + LOT_NO         + "', '" + ITEM_QTY + "', " + Environment.NewLine +
                          "                      '" + MGM_STATUS + "', '" + USE_DEADLN + "', '" + IN_DATE   + "',     '" + MADEIN_NO      + "', '" + MADEIN_DATE + "'," + Environment.NewLine +
                          "                      '" + MADEIN_NM  + "', '" + VENDOR_NM  + "', '" + STOCK_SEQ + "',     '" + STOCK_SEQ      + "', '" + LBL_NO + "', " + Environment.NewLine +
                          "                      '',                   '',                   '',                      '',                   '',  " + Environment.NewLine +
                          "                      '',                   '29',                 '재고이관',              '" + UNIT + "',  '" + DBUtils.ClientIPAddress + "', " +  Environment.NewLine +
-                         "                      '" + DBUtils.ClientPcName + "', 'PC', CONVERT(DATETIME, '" + IN_DATE + "'))";
+                         "                      '" + DBUtils.ClientPcName + "', 'PC', CONVERT(DATETIME, '" + IN_DATE + "'), '', '')";
                 // W_STOCK에 INSERT
                 DBUtils.InsertData(strSQL, transaction);
 
