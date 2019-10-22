@@ -395,8 +395,11 @@ namespace ExcelLoad
                 if (gridView1.GetRowCellValue(grid1RowHandle, "ASSET_CLASS").ToString().Contains("제품"))
                 {
                     LBL_NO = ITEM_NO + LOT_NO;
-                    strSQL = "SELECT LBL_NO FROM W_LABEL WHERE ITEM_NO = '" + ITEM_NO + "'";
-
+                    strSQL = " SELECT LBL_NO " + Environment.NewLine +
+                               " FROM W_LABEL " + Environment.NewLine +
+                              " WHERE ITEM_NO = '" + ITEM_NO + "'" + Environment.NewLine +
+                              "   AND LOT_NO = '" + LOT_NO + "'";
+                    
                     DataTable tempTable = DBUtils.getSelectResultTableOrNull(strSQL, transaction);
 
                     if (tempTable != null)
